@@ -335,8 +335,7 @@ The scraper should extract the following signals from the website:
 - Mentions of strain-level or CFU-level details
 - References to clinical studies or scientific research
 - Product formats such as capsules, sachets, functional foods, or feed additives
-- Regulatory or quality certifications such as GMP, ISO, FSSAI, or pharma-grade
-  compliance
+- Any mention of GMP, ISO, or FSSAI certifications (shows quality standards).
   
 My Logic for Filtering Companies:
 To make sure the scraper doesn't just pick up any random site that mentions "probiotics", I used a weighted scoring system:
