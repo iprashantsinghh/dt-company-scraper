@@ -1,0 +1,1 @@
+Testing this was fun. The hardest part was making sure the scraper doesn't get distracted by 'Biotech' mentions in the footer of non-bio companies. The scoring system (threshold of 6) really helped in keeping the JSON output clean.
