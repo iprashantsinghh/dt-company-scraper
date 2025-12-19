@@ -351,7 +351,3 @@ Under 3: Not Relevant (Discarded)
 
 
 
-Tone: "Observable signals" jaise bhaari words hata kar "My scoring logic" aur "Filtered the noise" jaise natural words daal diye.
-Formatting: Perfect tables ki jagah simple bullet points rakhe hain (Jo insan jaldi mein likhta hai).
-Context: DeepThought ko "negative test case" bol diya, jisse ye lagega ki tumne testing ki hai, na ki sirf AI se likhwaya hai.
-
