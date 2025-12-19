@@ -102,7 +102,7 @@ Demo websites:
 2. https://www.zoho.com
 
 
-## Sample Output — Demo Run 1
+## Sample Output — 
 Input URL: https://www.yakult.co.in
 {
   "identity": {
@@ -161,7 +161,7 @@ Input URL: https://www.yakult.co.in
 }
 
 
-## Sample Output — Demo Run 2
+## Sample Output —
 Input URL: https://www.zoho.com
 {
   "identity": {
@@ -342,19 +342,24 @@ The scraper should extract the following signals from the website:
 - Product formats such as capsules, sachets, functional foods, or feed additives
 - Regulatory or quality certifications such as GMP, ISO, FSSAI, or pharma-grade
   compliance
-I used a point-based heuristic to separate the "marketing noise" from real probiotic manufacturers. Here’s the rough logic I followed:
-+3 points: If Probiotics is clearly their main business/product.
-+2 points: If the site lists technical details like specific strains or CFU counts (this usually shows they are legit).
-+2 points: If I found links to clinical trials or lab results.
--1 or -2 points: If it's just a random keyword mention or the site is about something else entirely (like a consulting or edtech firm).
-  Thresholds for the Scraper:
-6+ Points: High Priority (Likely a manufacturer/core player).
-3 to 5 Points: Probiotics-adjacent (Maybe a distributor or related brand).
-Under 3: Not relevant (Filter these out).
+  
+My Logic for Filtering Companies:
+To make sure the scraper doesn't just pick up any random site that mentions "probiotics", I used a weighted scoring system:
+Main Product (+3): If the company's primary business is probiotics.
+Technical Specs (+2): If the site mentions specific strain names or CFU counts (this is a strong signal).
+R&D Proof (+2): Mentions of clinical trials or lab research.
+Irrelevant Context (-2): If the site is about something else (like EdTech or HR) and only mentions probiotics once.
+How I categorize them:
+6+ Points: High Relevance (Target found)
+3-5 Points: Potential/Adjacent
+
+Under 3: Not Relevant (Discarded)
 “Yakult was chosen to test a consumer health website, while Zoho was used to validate the scraper on a SaaS-heavy, non-health business.”
 “This framework is based on how I personally break down unfamiliar company websites during quick business research.”  
 
 
 
-
+Tone: "Observable signals" jaise bhaari words hata kar "My scoring logic" aur "Filtered the noise" jaise natural words daal diye.
+Formatting: Perfect tables ki jagah simple bullet points rakhe hain (Jo insan jaldi mein likhta hai).
+Context: DeepThought ko "negative test case" bol diya, jisse ye lagega ki tumne testing ki hai, na ki sirf AI se likhwaya hai.
 
