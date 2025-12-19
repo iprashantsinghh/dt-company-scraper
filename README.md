@@ -73,14 +73,13 @@ The scraper focuses on reliability, clarity, and non-hallucinated extraction.
 
 
 ## Scraper Workflow (High-Level Logic)
-1. Accept a company website URL as input.
+1. Take the URL and clean it (normalize) for crawling.
 2. Normalize the URL and check basic accessibility.
 3. Fetch the homepage HTML content.
 4. Extract obvious identity signals:
    - Company name
    - Tagline or headline text
-5. Discover internal links and prioritize pages based on predefined rules
-   (About, Products, Solutions, Careers, Contact, etc.).
+5. Link discovery: Prioritizing "About" and "Products" to find core business info faster.
 6. Visit pages sequentially until the page crawl limit (10–15 pages) is reached.
 7. From each page, extract:
    - Business descriptions
