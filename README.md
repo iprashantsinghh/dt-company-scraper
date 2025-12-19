@@ -293,26 +293,21 @@ involved in the probiotics space. Each category focuses on observable website
 evidence and helps reduce ambiguity in classification.
 
 
-
+“Yakult was chosen to test a consumer health website, while Zoho was used to validate the scraper on a SaaS-heavy, non-health business.”
+“This framework is based on how I personally break down unfamiliar company websites during quick business research.”  
 
 
 
 ## TASK 2 — Company Profile: DeepThought Education
 Website analysed: https://www.deepthought.education/
-DeepThought Education is an education-focused organization that works on
-learning programs, talent development, and innovation in education.
-The website primarily communicates offerings related to education and
-training rather than health, nutrition, or biological sciences.
-- The company operates in the education and learning space.
-- Website content focuses on training programs, learning journeys, and
-  educational initiatives.
-- No mention of probiotics, probiotic products, or probiotic research.
-- No references to gut health, microbiome, strains, or CFU-level details.
-- No health, nutrition, or pharma-related product offerings.
-- The website does not provide any information suggesting involvement
-  in probiotics either directly or indirectly.
-- There is no ambiguous or partial signal related to probiotics that
-  requires further investigation.
+## Test Case: Filtering "Noise" (DeepThought Education)
+
+I used DeepThought Education as a negative test case to see if the scraper gets confused by partner names. Even though they mention "Unique Biotech" (a probiotics giant) on their site, the scraper correctly assigned a **Score of -2**.
+**Why it correctly filtered this out:**
+- The core business is clearly EdTech and fellowships, not biological manufacturing.
+- No mentions of technical data like CFU, strains, or lab studies.
+- No health-grade or pharma certifications found.
+This test proves that the logic doesn't just blindly follow keywords but actually looks for the company's core "Business Substance."
 
 
 ### Final Classification
@@ -352,10 +347,8 @@ Irrelevant Context (-2): If the site is about something else (like EdTech or HR)
 How I categorize them:
 6+ Points: High Relevance (Target found)
 3-5 Points: Potential/Adjacent
-
 Under 3: Not Relevant (Discarded)
-“Yakult was chosen to test a consumer health website, while Zoho was used to validate the scraper on a SaaS-heavy, non-health business.”
-“This framework is based on how I personally break down unfamiliar company websites during quick business research.”  
+
 
 
 
