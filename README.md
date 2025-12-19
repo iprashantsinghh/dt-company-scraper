@@ -263,6 +263,95 @@ In cases where content is unavailable due to JavaScript rendering,
 broken links, or restricted access, the scraper returns a best-effort
 output and logs the limitation clearly in the metadata.
 “The goal of this system is not perfect coverage, but profiling that is reliable enough to be reused for real decisions.”
-“The structure and extraction logic reflect how I personally review unfamiliar company websites when doing quick business research.”
+“The structure and extraction logic reflect how I personally review unfamiliar company websites when doing quick business research.”## PART 1 — Translating Client Objective into Website Signals
+The client’s objective is to identify companies that are genuinely operating
+in the probiotics space. To evaluate this using public information, the
+objective is translated into observable and verifiable signals on a company’s
+website.
+### Observable Website Signals
+
+To determine probiotics involvement, the following website signals are considered:
+
+- Explicit mention of probiotics or probiotic-based products
+- Description of probiotics as manufactured, researched, or marketed offerings
+- References to gut health, microbiome, or digestive health applications
+- Mentions of probiotic strains or CFU-level details
+- Scientific or R&D content related to probiotics
+- Certifications or regulatory references relevant to food, pharma, or nutraceuticals
+- Product formats such as supplements, functional foods, or bulk ingredients
+
+
+### Probiotics Identification Framework
+The following framework is used to evaluate whether a company is genuinely
+involved in the probiotics space. Each category focuses on observable website
+evidence and helps reduce ambiguity in classification.
+
+## PART 2 — Company Profile: DeepThought Education
+Website analysed: https://www.deepthought.education/
+DeepThought Education is an education-focused organization that works on
+learning programs, talent development, and innovation in education.
+The website primarily communicates offerings related to education and
+training rather than health, nutrition, or biological sciences.
+- The company operates in the education and learning space.
+- Website content focuses on training programs, learning journeys, and
+  educational initiatives.
+- No mention of probiotics, probiotic products, or probiotic research.
+- No references to gut health, microbiome, strains, or CFU-level details.
+- No health, nutrition, or pharma-related product offerings.
+- The website does not provide any information suggesting involvement
+  in probiotics either directly or indirectly.
+- There is no ambiguous or partial signal related to probiotics that
+  requires further investigation.
+
+
+### Final Classification
+
+Based on the evaluation of the website against the probiotics identification
+framework, DeepThought Education does not show any evidence of involvement
+in probiotics.
+The website does not indicate manufacturing, researching, marketing, or
+using probiotics as a functional ingredient in any form.
+
+The scraper should prioritise the following pages when analysing a company
+for probiotics involvement:
+- Homepage
+- About Us / Company
+- Products or Portfolio
+- R&D / Technology
+- Applications or Therapeutic Areas
+- Certifications / Compliance
+- Blogs or Publications
+
+The scraper should extract the following signals from the website:
+
+- Keywords such as: probiotics, probiotic strains, CFU, Lactobacillus,
+  Bifidobacterium, gut health, microbiome
+- Mentions of strain-level or CFU-level details
+- References to clinical studies or scientific research
+- Product formats such as capsules, sachets, functional foods, or feed additives
+- Regulatory or quality certifications such as GMP, ISO, FSSAI, or pharma-grade
+  compliance
+Each company can be classified using a simple scoring model:
+
+- Probiotics as a core product: +3
+- Strain-level or CFU-level mention: +2
+- R&D or clinical validation mention: +2
+- Only marketing-level or wellness mention: +1
+- One-off or vague mention: −1
+- No supporting evidence across the site: −2
+
+Final classification:
+- Score ≥ 6 → Probiotics-focused
+- Score 3–5 → Probiotics-adjacent
+- Score < 3 → Not relevant
+
+
 “Yakult was chosen to test a consumer health website, while Zoho was used to validate the scraper on a SaaS-heavy, non-health business.”
 “This framework is based on how I personally break down unfamiliar company websites during quick business research.”  
+
+
+
+
+
+task 2
+
