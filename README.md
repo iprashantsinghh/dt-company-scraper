@@ -1,10 +1,16 @@
 # dt-company-scraper
-Business analyst assignment focused on structured company profiling from public websites.
+I built this scraper to solve a common BA problem: quickly understanding what a company actually does without spending 20 minutes clicking through their site. It turns a messy website into a clean JSON profile.
 
-
+I decided to hit the Homepage and About Us first because that's where the "Identity" signals are strongest. Pricing and Careers are secondary but great for picking up "Hiring signals" and "Business Model" clues. I've capped it at 15 pages so it doesn't get stuck in a loop or crawl irrelevant blogs.
 
 #DT Company Website Scraper
-This project extracts structured company information from a public company website URL.
+Identifying "Real" Probiotics Players Identifying companies in this niche is tricky because many use "probiotics" just for SEO. I created a simple heuristic based on what I'd look for manually:
+
+Are they talking about CFU counts or strains (technical proof)?
+
+Do they have R&D/Clinical sections?
+
+Or is it just a marketing mention in a blog?
 Input: Company website URL  
 Output: Structured Company Info Record (JSON-like format)
 The scraper focuses on reliability, clarity, and non-hallucinated extraction.
@@ -286,7 +292,12 @@ The following framework is used to evaluate whether a company is genuinely
 involved in the probiotics space. Each category focuses on observable website
 evidence and helps reduce ambiguity in classification.
 
-## PART 2 — Company Profile: DeepThought Education
+
+
+
+
+
+## TASK 2 — Company Profile: DeepThought Education
 Website analysed: https://www.deepthought.education/
 DeepThought Education is an education-focused organization that works on
 learning programs, talent development, and innovation in education.
@@ -331,27 +342,19 @@ The scraper should extract the following signals from the website:
 - Product formats such as capsules, sachets, functional foods, or feed additives
 - Regulatory or quality certifications such as GMP, ISO, FSSAI, or pharma-grade
   compliance
-Each company can be classified using a simple scoring model:
-
-- Probiotics as a core product: +3
-- Strain-level or CFU-level mention: +2
-- R&D or clinical validation mention: +2
-- Only marketing-level or wellness mention: +1
-- One-off or vague mention: −1
-- No supporting evidence across the site: −2
-
-Final classification:
-- Score ≥ 6 → Probiotics-focused
-- Score 3–5 → Probiotics-adjacent
-- Score < 3 → Not relevant
-
-
+I used a point-based heuristic to separate the "marketing noise" from real probiotic manufacturers. Here’s the rough logic I followed:
++3 points: If Probiotics is clearly their main business/product.
++2 points: If the site lists technical details like specific strains or CFU counts (this usually shows they are legit).
++2 points: If I found links to clinical trials or lab results.
+-1 or -2 points: If it's just a random keyword mention or the site is about something else entirely (like a consulting or edtech firm).
+  Thresholds for the Scraper:
+6+ Points: High Priority (Likely a manufacturer/core player).
+3 to 5 Points: Probiotics-adjacent (Maybe a distributor or related brand).
+Under 3: Not relevant (Filter these out).
 “Yakult was chosen to test a consumer health website, while Zoho was used to validate the scraper on a SaaS-heavy, non-health business.”
 “This framework is based on how I personally break down unfamiliar company websites during quick business research.”  
 
 
 
 
-
-task 2
 
